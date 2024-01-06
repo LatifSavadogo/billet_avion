@@ -1,0 +1,36 @@
+ion-toolbar {
+    --background: #FFA500;
+    /* Couleur de fond de la barre d'outils */
+    --color: #000000;
+    /* Couleur du texte de la barre d'outils */
+}
+
+ion-content {
+    --background: #F5F5F5;
+    /* Couleur de fond du contenu */
+}
+
+ion-card {
+    margin: 16px;
+    /* Marge autour de la carte */
+    border-radius: 8px;
+    /* Coins arrondis de la carte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Ombre légère */
+}
+
+ion-card-content {
+    padding: 16px;
+    /* Espacement interne du contenu de la carte */
+}
+
+ion-button {
+    margin-top: 16px;
+    /* Marge en haut du bouton */
+    background-color: #FFA500;
+    /* Couleur de fond du bouton */
+    color: #FFFFFF;
+    /* Couleur du texte du bouton */
+    --ion-ripple-color: #FFFFFF;
+    /* Couleur de l'effet de vague du bouton */
+}

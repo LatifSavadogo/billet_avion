@@ -1,0 +1,171 @@
+<ion-header [translucent]="true" padding>
+  <ion-toolbar  color="warning">
+    <ion-menu-button slot="start" style=" display: flex; " menu="main-menu" title="Menu"></ion-menu-button>
+    <ion-title>Historique</ion-title>
+  </ion-toolbar >
+</ion-header>
+
+<ion-content [fullscreen]="true" padding>
+ <style>
+  img{
+
+    width: 100%;
+  }
+ </style>
+<ion-card >
+  <ion-card-header >
+    <ion-card-title color="dark">
+      Voulez vous voyagez? 
+    </ion-card-title>
+    <ion-card-subtitle> Alors vous êtes à la bonne adresse. voyagez à travers le monde en toute securité avec Air Burkina</ion-card-subtitle>
+  </ion-card-header>
+</ion-card>
+
+<ion-card >
+    <ion-card-header >
+      <ion-card-title>
+        Mali
+      </ion-card-title>
+      <ion-card-subtitle>Bamako</ion-card-subtitle>
+    </ion-card-header>
+    <img src="assets\Mali\11.jpg" position="floating" />
+    <div class="prixpays">
+      <p>
+      Ouagadougou, Burkina Faso - Bamako, Mali (OUA-BMK)  226€ - 439€
+    </p>
+    <p>Bobo Dioulasso, Burkina Faso - Bamako, Mali (BDS-BMK) 293€ - 526€ </p>
+
+  </div>
+    <label [routerLink]="['/mali']" class="mali" style="margin-left: 40%;" >Afficher plus...</label>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header >
+      <ion-card-title>
+        Niger
+      </ion-card-title>
+      <ion-card-subtitle>Niamey</ion-card-subtitle>
+    </ion-card-header>
+    <img src="assets\Niger\7.jpeg" position="floating" />
+    <div class="prixpays">
+      <p>
+      Ouagadougou, Burkina Faso - Niamey, Niger (OUA-NIA)  458€ - 522€
+    </p>
+    <p>Bobo Dioulasso, Burkina Faso - Niamey, Niger (BDS-NIA) 150€ - 300€</p>
+
+  </div>
+    <label [routerLink]="['/niger']" class="mali" style="margin-left: 40%;" >Afficher plus...</label>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Côte D'Ivoire
+      </ion-card-title>
+      <ion-card-subtitle>Yamoussoukro</ion-card-subtitle>
+    </ion-card-header>
+    <img src="assets\Côte D'Ivoire\4.jpg" />
+    <div class="prixpays">
+      <p>
+        Ouagadougou, Burkina Faso - Yamoussoukro (OUA-YMK) 30.01€ - 84.73€
+      </p>
+      <p>Bobo Dioulasso, Burkina Faso - Yamoussoukro (BDS-YMK) 282€ - 534€</p>
+
+  </div>
+    
+    <label [routerLink]="['/cote-ivoire']" class="mali" style=" margin-left: 40%;" >Afficher plus...</label>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Senegal
+      </ion-card-title>
+      <ion-card-subtitle>Dakar</ion-card-subtitle>
+    </ion-card-header>
+    <img src="assets\Senegal\4.jpg" />
+    <div class="prixpays">
+      <p>
+        Ouagadougou, Burkina Faso - Dakar, Senegal (OUA-DKR) 283€ - 588€ 
+      </p>
+      <p>Bobo Dioulasso, Burkina Faso - Dakar, Senegal (BDS-DKR) 330€ - 594€ </p>
+    </div>
+    <label [routerLink]="['/senegal']" class="mali" style=" margin-left: 40%;" >Afficher plus...</label>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+      Ghana
+      </ion-card-title>
+      <ion-card-subtitle>Accra</ion-card-subtitle>
+    </ion-card-header>
+    <img src="assets\Ghana\7.jpg" />
+    <div class="prixpays">
+      <p>Ouagadougou, Burkina Faso - Accra, Ghana (OUA-ACR) 293€ - 529€ </p>
+      <p>Bobo Dioulasso, Burkina Faso - Accra, Ghana (BDS-ACR) 165€ - 300€ </p>
+
+  </div>
+    
+    <label [routerLink]="['/ghana']" class="mali" style=" margin-left: 40%;" >Afficher plus...</label>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+      Togo
+      </ion-card-title>
+      <ion-card-subtitle>Lome</ion-card-subtitle>
+    </ion-card-header>
+    <img src="assets\Togo\9.jpeg" />
+    <div class="prixpays">
+      <p>Ouagadougou, Burkina Faso - Lomé, Togo (OUA-LME) 289€-410€</p>
+      <p>Bobo Dioulasso, Burkina Faso - Lomé, Togo (BDS-LME) 525€-1000€</p>
+
+  </div>
+    
+    <label [routerLink]="['/togo']" class="mali" style=" margin-left: 40%;" >Afficher plus...</label>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+      Benin
+      </ion-card-title>
+      <ion-card-subtitle>cotonou</ion-card-subtitle>
+    </ion-card-header>
+    <img src="assets\Benin\3.jpg" />
+     <div class="prixpays">
+        <p>Ouagadougou, Burkina Faso - Cotonou, Benin (OUA-CTN) 283€-520€</p>
+        <p>Bobo Dioulasso, Burkina Faso - Cotonou, Benin (BDS-CTN) 150€-300€</p>
+
+    </div>
+    
+    <label [routerLink]="['/benin']" class="mali" style=" margin-left: 40%;" >Afficher plus...</label>
+  </ion-card>
+</ion-content>
+
+<ion-footer padding>
+  <ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" color="warning">
+      <ion-tab-button tab="home" [routerLink]="['/home']">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </ion-tab-button>
+      <ion-tab-button tab="add" [routerLink]="['/billet']">
+        <ion-icon name="add" src="assets\icon\ionicons.designerpack\add-outline.svg"></ion-icon>
+        Réserver un billet
+      </ion-tab-button>
+
+      <ion-tab-button  href="assets\Vols\horaire_des_vols.jpg">
+        <ion-icon name="vols" src="assets\icon\ionicons.designerpack\airplane-outline.svg"></ion-icon>
+        Vols
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>
+</ion-footer>
+
+

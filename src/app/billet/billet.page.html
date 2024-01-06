@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<ion-header [translucent]="true" padding>
+  <ion-toolbar color="warning">
+    <ion-menu-button slot="start" style="display: flex;" menu="main-menu" title="Menu"></ion-menu-button>
+    <ion-title>Reservez vos billets en toute sécurité</ion-title>
+  </ion-toolbar>
+  <!-- Inclure la bibliothèque pdfMake -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
+</ion-header>
+
+<ion-content [fullscreen]="true" padding>
+  <!-- Contenu de la page -->
+  <div id="billet-container">
+  <ion-list>
+    <!-- Segment de sélection (Aller simple ou Aller retour) -->
+    <ion-toolbar>
+      <ion-segment [(ngModel)]="selectedOption" class="custom-segment">
+          <!-- Options du segment -->
+        <ion-segment-button value="option1">
+           Aller simple
+        </ion-segment-button>
+        <ion-segment-button value="option2">
+          Aller retour
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+    
+    <!-- Contenu conditionnel en fonction de l'option sélectionnée -->
+    <div *ngIf="selectedOption === 'option1'">
+      <!-- Formulaires pour l'option 1 (Aller simple) -->
+      <ion-toolbar>
+        <ion-item>
+          <ion-label position="floating">Nom</ion-label>
+          <ion-input [(ngModel)]="selectedNom"></ion-input>
+        </ion-item>
+      </ion-toolbar>
+      <ion-toolbar>
+        <ion-item>
+          <ion-label position="floating">Prénom</ion-label>
+          <ion-input [(ngModel)]="selectedPrenom"></ion-input>
+        </ion-item>
+      </ion-toolbar>
+      <ion-toolbar>
+        <ion-item>
+          <ion-label position="floating" >Départ</ion-label>
+          <ion-select [(ngModel)]="selectedVilleDepart"  (ionChange)="updatePrix()">
+            <ion-select-option value="Ouagadougou, Burkina Faso">Ouagadougou, Burkina Faso</ion-select-option>
+            <ion-select-option value="Bobo Dioulasso, Burkina Faso">Bobo Dioulasso, Burkina Faso</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-toolbar>
+
+      <ion-toolbar>
+        <ion-item>
+          <ion-label position="floating" >Arrivée</ion-label>
+          <ion-select [(ngModel)]="selectedVilleArrive"  (ionChange)="updatePrix()">
+            <ion-select-option value="Ouagadougou, Burkina Faso">Ouagadougou, Burkina Faso</ion-select-option>
+            <ion-select-option value="Bobo Dioulasso, Burkina Faso">Bobo Dioulasso, Burkina Faso</ion-select-option>
+            <ion-select-option value="Bamako, Mali">Bamako, Mali</ion-select-option>
+            <ion-select-option value="Yamoussoukro, Côte d'Ivoire">Yamoussoukro, Côte d'Ivoire</ion-select-option>
+            <ion-select-option value="Abidjan, Côte d'Ivoire">Abidjan, Côte d'Ivoire</ion-select-option>
+            <ion-select-option value="Accra, Ghana">Accra, Ghana</ion-select-option>
+            <ion-select-option value="Lomé, Togo">Lomé, Togo</ion-select-option>
+            <ion-select-option value="Niamey, Niger">Niamey, Niger</ion-select-option>
+            <ion-select-option value="Cotonou, Benin">Cotonou, Benin</ion-select-option>
+            <ion-select-option value="Dakar, Senegal"> Dakar, Senegal</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-toolbar>
+
+      <ion-toolbar>
+        <ion-item>
+          <ion-label position="floating">Aller</ion-label>
+          <ion-input  type="date" [(ngModel)]="selectedDateAller" class="custom-date-picker" ></ion-input>
+        </ion-item>
+      </ion-toolbar>
+
+          <ion-toolbar>
+          <ion-item>
+            <ion-label position="floating">Passager</ion-label>
+            <ion-select [multiple]="true" [(ngModel)]="selectedPassager">
+              <ion-select-option>Adulte</ion-select-option>
+              <ion-select-option>Enfant</ion-select-option>
+              <ion-select-option>Bébé</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-toolbar>
+      
+      <ion-toolbar>
+        <ion-label>Prix : {{ prix }} €</ion-label>
+      </ion-toolbar>
+    </div>
+
+    <div *ngIf="selectedOption === 'option2'">
+      <!-- Formulaires pour l'option 2 (Aller retour) -->
+      <ion-toolbar>
+        <ion-item>
+          <ion-label position="floating">Nom</ion-label>
+          <ion-input [(ngModel)]="selectedNom"></ion-input>
+        </ion-item>
+      </ion-toolbar>
+      <ion-toolbar>
+        <ion-item>
+          <ion-label position="floating">Prénom</ion-label>
+          <ion-input [(ngModel)]="selectedPrenom"></ion-input>
+        </ion-item>
+      </ion-toolbar>
+      <ion-toolbar>
+        <ion-item>
+          <ion-label position="floating">Départ</ion-label>
+          <ion-select [(ngModel)]="selectedVilleDepartRetour"  (ionChange)="updatePrix()">
+            <ion-select-option value="Ouagadougou, Burkina Faso">Ouagadougou, Burkina Faso</ion-select-option>
+            <ion-select-option value="Bobo Dioulasso, Burkina Faso">Bobo Dioulasso, Burkina Faso</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-toolbar>
+
+      <ion-toolbar>
+        <ion-item>
+          <ion-label position="floating">Arrivée</ion-label>
+          <ion-select [(ngModel)]="selectedVilleArriveRetour"  (ionChange)="updatePrix()">
+            <ion-select-option value="Ouagadougou, Burkina Faso">Ouagadougou, Burkina Faso</ion-select-option>
+            <ion-select-option value="Bobo Dioulasso, Burkina Faso">Bobo Dioulasso, Burkina Faso</ion-select-option>
+            <ion-select-option value="Bamako, Mali">Bamako, Mali</ion-select-option>
+            <ion-select-option value="Yamoussoukro, Côte d'Ivoire">Yamoussoukro, Côte d'Ivoire</ion-select-option>
+            <ion-select-option value="Abidjan, Côte d'Ivoire">Abidjan, Côte d'Ivoire</ion-select-option>
+            <ion-select-option value="Accra, Ghana">Accra, Ghana</ion-select-option>
+            <ion-select-option value="Lomé, Togo">Lomé, Togo</ion-select-option>
+            <ion-select-option value="Niamey, Niger">Niamey, Niger</ion-select-option>
+            <ion-select-option value="Cotonou, Benin">Cotonou, Benin</ion-select-option>
+            <ion-select-option value="Dakar, Senegal"> Dakar, Senegal</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-toolbar>
+
+      <ion-toolbar>
+        <ion-item>
+          <ion-label position="floating">Aller</ion-label>
+          <ion-input  type="date" [(ngModel)]="selectedDateAllerRetour" class="custom-date-picker"></ion-input>
+        </ion-item>
+      </ion-toolbar>
+
+      <ion-toolbar>
+        <ion-item>
+          <ion-label position="floating">Retour</ion-label>
+          <ion-input type="date"  [(ngModel)]="selectedDateRetour" class="custom-date-picker"></ion-input>
+        </ion-item>
+      </ion-toolbar>
+    
+
+      <ion-toolbar>
+        <ion-item>
+          <ion-label position="floating">Passager</ion-label>
+          <ion-select [multiple]="true"  [(ngModel)]="selectedPassagerRetour" >
+            <ion-select-option>Adulte</ion-select-option>
+            <ion-select-option>Enfant</ion-select-option>
+            <ion-select-option>Bébé</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-toolbar>
+      <ion-toolbar>
+        <ion-label style="margin-left: 20px;">Prix : {{ prix }} €</ion-label>
+      </ion-toolbar>
+      </div>
+  </ion-list>
+
+  <!-- Formulaires de paiement -->
+  <div>
+    <ion-label style="margin-left: 15px; text-decoration: solid;">Paiement :</ion-label>
+    <ion-toolbar>
+      <ion-item>
+        <ion-label position="floating">Compte bancaire</ion-label>
+        <ion-input type="text" [(ngModel)]="selectedPaiementCompte"></ion-input>
+      </ion-item>
+    </ion-toolbar>
+    <ion-toolbar>
+      <ion-item>
+        <ion-label position="floating">Code carte bancaire</ion-label>
+        <ion-input type="password" value="password" [(ngModel)]="selectedPaiementMdp"></ion-input>
+      </ion-item>
+    </ion-toolbar>
+  </div>
+</div>
+
+    <!-- Boutons d'action -->
+<div>
+  <ion-button (click)="AjouterData()" id="Ajouter" color="dark" slot="start" name="add">Ajouter</ion-button>
+  <ion-button (click)="showInputDialog()"  color="danger" slot="start" name="delete">Supprimer</ion-button>    
+  <ion-button (click)="demanderIdentifiant()" color="light" slot="end">
+    <ion-icon src="assets\icon\ionicons.designerpack\download-outline.svg"> </ion-icon>
+  </ion-button>
+</div>
+
+<!-- Bouton de copie d'identifiant -->
+<div class="message-container">
+  <button *ngIf="nouveauBilletId" (click)="copierIdentifiant(nouveauBilletId)">Copier l'identifiant</button>
+</div>
+</ion-content>
+
+
+<ion-footer padding>
+  <ion-toolbar>
+  <ion-tabs>
+    <!-- Onglets de navigation -->
+    <ion-tab-bar slot="bottom" color="warning">
+      <ion-tab-button tab="home" [routerLink]="['/home']">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </ion-tab-button>
+      <ion-tab-button tab="add" [routerLink]="['/billet']">
+        <ion-icon name="add" src="assets\icon\ionicons.designerpack\add-outline.svg"></ion-icon>
+        Réserver un billet
+      </ion-tab-button>
+      <ion-tab-button  href="assets\Vols\horaire_des_vols.jpg">
+        <ion-icon name="vols" src="assets\icon\ionicons.designerpack\airplane-outline.svg"></ion-icon>
+        Vols
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>
+</ion-footer>
+
+

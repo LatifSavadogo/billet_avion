@@ -1,0 +1,38 @@
+ion-toolbar {
+    --background: #FFA500;
+    /* Couleur de fond de la barre d'outils */
+    --color: #000000;
+    /* Couleur du texte de la barre d'outils */
+}
+
+ion-content {
+    --background: #F5F5F5;
+    /* Couleur de fond du contenu */
+}
+
+ion-card {
+    margin: 16px;
+    /* Marge autour de la carte */
+    border-radius: 8px;
+    /* Coins arrondis de la carte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Ombre légère */
+}
+
+img {
+    width: 100%;
+    /* Image prend 100% de la largeur du conteneur */
+    border-radius: 8px 8px 0 0;
+    /* Coins arrondis seulement en haut */
+}
+
+h4 {
+    padding: 16px;
+    /* Espacement interne du texte */
+    color: #333;
+    /* Couleur du texte */
+    font-size: 14px;
+    /* Taille de la police */
+    line-height: 1.6;
+    /* Hauteur de ligne pour une meilleure lisibilité */
+}

@@ -1,0 +1,54 @@
+<ion-header [translucent]="true" padding>
+  <ion-toolbar color="warning">
+    <ion-menu-button slot="start" style=" display: flex; " menu="main-menu" title="Menu"></ion-menu-button>
+    <ion-title>Contactez-nous</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input type="text" [(ngModel)]="nom" name="nom" autocomplete="on"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Prénom</ion-label>
+      <ion-input type="text" [(ngModel)]="prenom" name="prenom" autocomplete="on"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input type="email" [(ngModel)]="email" name="email" autocomplete="on"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Message</ion-label>
+      <ion-textarea [(ngModel)]="message" name="message" autocomplete="on"></ion-textarea>
+    </ion-item>
+
+    <ion-button color="dark" slot="start" type="submit" values="Envoyer">Envoyer</ion-button>
+
+  </form>
+</ion-content>
+
+<ion-footer padding>
+  <ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" color="warning">
+      <ion-tab-button tab="home" [routerLink]="['/home']">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </ion-tab-button>
+      <ion-tab-button tab="add" [routerLink]="['/billet']">
+        <ion-icon name="add" src="assets\icon\ionicons.designerpack\add-outline.svg"></ion-icon>
+        Réserver un billet
+      </ion-tab-button>
+      <ion-tab-button  href="assets\Vols\horaire_des_vols.jpg">
+        <ion-icon name="vols" src="assets\icon\ionicons.designerpack\airplane-outline.svg"></ion-icon>
+        Vols
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>
+</ion-footer>
+

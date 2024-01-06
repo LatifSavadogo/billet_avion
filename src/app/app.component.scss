@@ -1,0 +1,39 @@
+/* Menu Styles */
+ion-menu {
+    --ion-background-color: #343a40;
+    /* Couleur de fond du menu */
+    --ion-text-color: #ffffff;
+    /* Couleur du texte du menu */
+}
+
+
+ion-list {
+    --ion-background-color: transparent;
+    /* Fond transparent pour la liste du menu */
+}
+
+ion-item {
+    --ion-text-color: #ffffff;
+    /* Couleur du texte des éléments du menu */
+}
+
+/* Dark Mode Toggle Styles */
+ion-toggle {
+    --background: #343a40;
+    /* Couleur de fond du toggle */
+    --checked-background: #ffc107;
+    /* Couleur de fond du toggle en position activée */
+    --handle-background: #ffffff;
+    /* Couleur du curseur du toggle */
+}
+
+/* Main Content Styles */
+ion-router-outlet {
+    --ion-background-color: #ffffff;
+    /* Couleur de fond du contenu principal */
+}
+
+.app-dark-background {
+    --ion-background-color: #343a40;
+    /* Couleur de fond principale en mode sombre */
+}

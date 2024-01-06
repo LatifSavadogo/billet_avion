@@ -1,0 +1,91 @@
+
+<ion-header [translucent]="true" padding>
+  <ion-toolbar  color="warning">
+      <ion-menu-button slot="start" style=" display: flex; " menu="main-menu" title="Menu"></ion-menu-button>
+    <ion-title style="text-align: center;">
+      Air Burkina
+    </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true" padding>
+
+  <div class="body">
+  <h3>
+    <label>
+      <b style="font-family: lato;"> Bienvenue sur Air Burkina - Où chaque vol est le début d'une nouvelle aventure !</b>
+    </label>
+  </h3>
+   <ion-card>
+      <img src="assets\Acceuil\8.jpg" class="img"/>
+      <ion-card-header>
+        <ion-card-title>
+          Explorez le monde avec facilité et élégance grâce à Air Burkina . Nous sommes passionnés par l'art du voyage et nous sommes ici pour rendre vos rêves de vol une réalité.
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+
+    <ion-card>
+      <img src="assets\Acceuil\6.jpg" class="img"/>
+      <ion-card-header>
+        <ion-card-title>
+          Découvrez des destinations à couper le souffle, des plages tropicales aux métropoles dynamiques. Que vous recherchiez l'aventure, la détente ou les deux, nous avons une destination pour chaque voyageur.
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+
+    <ion-card>
+      <img src="assets\Acceuil\1.jpg" class="img"/>
+      <ion-card-header>
+        <ion-card-title>
+          Profitez de tarifs compétitifs et d'offres exclusives qui font de votre voyage une expérience encore plus précieuse. Nous croyons en la transparence et vous offrons les meilleurs tarifs possibles.
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+
+    <ion-card>
+      <img src="assets\Acceuil\7.jpg" class="img"/>
+      <ion-card-header>
+        <ion-card-title>
+          Économisez gros avec nos offres spéciales du mois ! Des réductions exclusives vous attendent. Ne manquez pas l'opportunité de rendre votre voyage encore plus mémorable.
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+
+    <ion-card>
+      <img src="assets\Acceuil\10.webp" class="img"/>
+      <ion-card-header>
+        <ion-card-title>
+          Prêt à décoller vers de nouvelles aventures ? Commencez votre voyage dès maintenant en explorant  notre application.
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+      
+  </div>
+ </ion-content>
+
+ <ion-footer padding>
+  <ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" color="warning">
+      <ion-tab-button tab="home" [routerLink]="['/home']">
+        <ion-icon name="home" ></ion-icon>
+        Home
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/billet']">
+        <ion-icon name="add" src="assets\icon\ionicons.designerpack\add-outline.svg"></ion-icon>
+        Réserver un billet
+      </ion-tab-button>
+      <!--<ion-tab-button [routerLink]="['/identifiant-billet']">
+        <ion-icon name="library"></ion-icon>
+        Billet
+      </ion-tab-button>-->
+      <ion-tab-button  href="assets\Vols\horaire_des_vols.jpg">
+        <ion-icon name="vols" src="assets\icon\ionicons.designerpack\airplane-outline.svg"></ion-icon>
+        Vols
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>
+</ion-footer>

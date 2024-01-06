@@ -1,0 +1,32 @@
+<!-- resume-billet.page.html -->
+<ion-header padding>
+  <ion-toolbar color="warning">
+    <ion-title>Résumé du Billet</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- Affichez les données résumées ici -->
+  <ion-card *ngIf="resumeData">
+    <ion-card-header>
+      Informations du Billet
+    </ion-card-header>
+
+    <ion-card-content>
+      <!--<p><strong>Identifiant:</strong> {{resumeData.nouveauBilletId}}</p>-->
+      <p><strong>Nom:</strong> {{ resumeData.selectedNom }}</p>
+      <p><strong>Prénom:</strong> {{ resumeData.selectedPrenom }}</p>
+      <p><strong>Ville de départ:</strong> {{ resumeData.VillesDeDepart }}</p>
+      <p><strong>Ville d'arrivée:</strong> {{ resumeData.VillesDArrive }}</p>
+      <p><strong>Date Aller:</strong> {{ resumeData.DateAller }}</p>
+      <p><strong>Date de retour:</strong> {{ resumeData.DateRetour }}</p>
+      <p><strong>Passagers:</strong> {{ resumeData.Passagers.join(', ') }}</p>
+      <p><strong>Prix:</strong> {{ resumeData.Prix }}</p>
+
+      <!-- Ajoutez d'autres informations au besoin -->
+
+      <!-- Ajoutez un bouton pour valider l'enregistrement (click)="validerEnregistrement()" -->
+      <ion-button expand="full" (click)="fermer()" >Ok</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

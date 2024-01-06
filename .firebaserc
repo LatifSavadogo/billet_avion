@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "projetmobile-f2dd8": {
+      "hosting": {
+        "app": [
+          "projetmobile-f2dd8"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "projetmobile-f2dd8"
+  }
+}

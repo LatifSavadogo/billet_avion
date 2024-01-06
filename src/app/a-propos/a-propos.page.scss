@@ -1,0 +1,58 @@
+.apropos{
+    padding: 15px;
+}
+/* Global Styles */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+ion-header {
+    background-color: #ffc107;
+    /* Couleur d'avertissement */
+    color: #fff;
+    text-align: center;
+}
+
+ion-toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Content Styles */
+ion-content {
+    padding: 20px;
+}
+
+.apropos {
+    text-align: justify;
+}
+
+/* Footer Styles */
+ion-footer {
+    background-color: #ffc107;
+    /* Couleur d'avertissement */
+    color: #fff;
+    text-align: center;
+}
+
+ion-tab-bar {
+    background-color: #ffc107;
+    /* Couleur d'avertissement */
+    color: #fff;
+    border-top: 1px solid #fff;
+    /* Ajout d'une bordure supérieure pour séparation */
+}
+
+ion-tab-button {
+    color: black;
+    flex-direction: column;
+    align-items: center;
+}
+
+ion-icon {
+    margin-bottom: 5px;
+    /* Ajout d'un espace entre l'icône et le texte */
+}

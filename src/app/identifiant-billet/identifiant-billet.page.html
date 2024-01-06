@@ -1,0 +1,21 @@
+<ion-header [translucent]="true" padding>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Identifiant du Billet</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" padding>
+  <div>
+    <ion-label>Copiez l'identifiant ci-dessous :</ion-label>
+    <ion-toolbar (click)="afficheResumeBillet()">
+    <ion-item>
+      <p><strong>Identifiant du billet</strong> {{ nouveauBilletId }}</p>
+      <!--<ion-input value="{{ nouveauBilletId }}" (click)="afficheResumeBillet()" readonly></ion-input>-->
+      <ion-button color="primary" (click)="copierIdentifiant()">Copier</ion-button>
+    </ion-item>
+    </ion-toolbar>
+  </div>
+</ion-content>

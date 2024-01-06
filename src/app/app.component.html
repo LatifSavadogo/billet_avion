@@ -1,0 +1,51 @@
+
+  <ion-app padding>
+    <div class="Containair">
+      <ion-menu menuId="main-menu" contentId="main" class="menu-dark-background">
+        <ion-header padding>
+          <ion-toolbar color="warning">
+            <ion-title>Menu</ion-title>
+          </ion-toolbar>
+    
+        </ion-header>
+      
+        <ion-content padding>
+          <ion-list>        
+    <ion-menu-toggle>
+      <ion-toolbar (click)="afficheHistorique()">                    
+          <ion-item >
+            <label >HISTORIQUE</label>
+        </ion-item>
+    </ion-toolbar> 
+    </ion-menu-toggle>
+            
+        <ion-menu-toggle>
+          <ion-toolbar (click)="afficheContact()">                    
+              <ion-item >
+                <label >CONTACT</label>
+            </ion-item>
+        </ion-toolbar>
+        </ion-menu-toggle>  
+    
+        <ion-menu-toggle>
+          <ion-toolbar (click)="afficheApropos()">                    
+              <ion-item >
+                <label >A PROPOS</label>
+            </ion-item>
+        </ion-toolbar>  
+        </ion-menu-toggle> 
+      
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+    
+      <ion-router-outlet id="main"></ion-router-outlet>
+      
+    
+    </div>
+    </ion-app>
+
+
+
+
+ 

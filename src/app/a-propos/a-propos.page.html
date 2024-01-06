@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+  <ion-toolbar  color="warning">
+    <ion-menu-button slot="start" style=" display: flex; " menu="main-menu" title="Menu"></ion-menu-button>
+    <ion-title>A propos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" padding>
+  <div class="apropos">
+  <p>
+    Notre Projet de Réservation de Billets d'Avion <br>
+
+Ce projet, né de notre cursus scolaire en développement
+d'applications, représente une immersion pratique dans le monde
+du développement logiciel en créant une plateforme novatrice de
+réservation de billets d'avion en ligne.
+
+<!--Objectif Pédagogique : -->
+L'essence de ce projet réside dans l'application concrète des connaissances
+acquises en classe. Nous avons mis l'accent sur le développement d'interfaces
+conviviales et la gestion sécurisée des transactions, deux aspects cruciaux que
+nous avons approfondis.
+
+<!--Processus de Développement :-->
+Notre itinéraire a suivi un parcours méthodique, commençant par la phase de
+conception, où chaque détail a été minutieusement planifié. Le processus a été
+jalonné par des défis stimulants, dont la gestion complexe de bases de données et
+la création d'une interface utilisateur intuitive. Ces défis ont été autant d'occasions
+d'apprentissage.
+
+<!--Technologies Utilisées :-->
+Nous avons exploité un éventail de technologies de pointe, dont Ionic, Angular, Node,
+Yarn, TypeScript, Cordova, Android Studio, Java, Gradle, et Firebase. L'intégration de
+ces technologies a été cruciale pour traduire nos compétences de programmation en une
+application fonctionnelle.
+
+<!--Rôle de Chaque Membre :-->
+Chaque membre de l'équipe a apporté une contribution significative, se spécialisant dans
+des aspects spécifiques du développement. Cette approche collaborative a été essentielle
+pour garantir la cohésion et le succès global du projet.
+
+<!--Leçons Apprises et Retours Utilisateur : -->
+Tout au long du parcours, nous avons tiré des leçons significatives, que ce soit dans la
+résolution de problèmes techniques ou dans la gestion efficace de l'équipe. Les retours
+des utilisateurs, même à des stades préliminaires, ont influencé nos choix de conception
+et orienté les améliorations de l'application.
+
+<!--Caractéristiques Uniques de l'Application : -->
+Notre application se distingue par une interface utilisateur intuitive offrant une
+expérience de réservation fluide, une intégration optimisée avec des services tiers
+pour des mises à jour en temps réel des horaires de vol, ainsi que les prix des vols
+et une fonction de gestion des préférences de voyage pour des recommandations personnalisées.
+Perspectives Futures : Nous envisageons avec enthousiasme l'avenir de notre application,
+envisageant l'ajout de nouvelles fonctionnalités pour répondre aux besoins changeants des
+utilisateurs.
+
+<!--Conclusion et Remerciements : -->
+Ce projet représente bien plus qu'une simple réalisation académique.
+Il incarne notre dévouement à la maîtrise des compétences de développement.
+Nous remercions chaleureusement notre équipe pédagogique pour son accompagnement
+constant tout au long de ce projet exaltant.
+ </p>
+</div>
+</ion-content>
+<ion-footer padding>
+  <ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" color="warning">
+      <ion-tab-button [routerLink]="['/home']">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </ion-tab-button>
+      <ion-tab-button tab="add" [routerLink]="['/billet']">
+        <ion-icon name="add" src="assets\icon\ionicons.designerpack\add-outline.svg"></ion-icon>
+        Réserver un billet
+      </ion-tab-button>
+      <ion-tab-button  href="assets\Vols\horaire_des_vols.jpg">
+        <ion-icon name="vols" src="assets\icon\ionicons.designerpack\airplane-outline.svg"></ion-icon>
+        Vols
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>
+</ion-footer>
+

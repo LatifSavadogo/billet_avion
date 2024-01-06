@@ -1,0 +1,14 @@
+<ion-content>
+  <h2>Détails du Billet</h2>
+
+  <ion-card *ngIf="billetSelectionne">
+    <ion-card-header>
+      Informations du Billet
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label *ngFor="let key of getObjectKeys(billetSelectionne)">
+        <strong>{{ key }}:</strong> {{ billetSelectionne[key] }}
+      </ion-label>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
